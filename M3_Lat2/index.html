@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lat 2 M2</title>
+</head>
+
+<body>
+<h1>Validasi Input</h1>
+<p>Masukkan nama, password, dan alamat email Anda!</p> 
+
+<div class="container">
+    <form onsubmit="return check();">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+    <br> <br>
+    <form onsubmit="return check();">
+        <label for="pass">Password:</label>
+        <input type="text" id="pass" name="pass" required>
+    <br> <br>
+    <form onsubmit="return check();">
+        <label for="mail">Alamat email:</label>
+        <input type="text" id="mail" name="mail" required>
+    <br><br>
+    <input type="submit" value="Klik">
+    </form>
+</div>
+
+<script>
+    function check(){
+   if(document.getElementById("pass").value == "sss") {
+        alert("Password benar!")
+        return true;
+   }
+   else {    
+        alert("Password salah!");
+        return false;
+   }
+ }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet Web Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        #map {
+        width: 1500px;
+        height: 590px;
+        }
+        .center {
+        text-align: center;
+        border: 3px solid rgb(119, 153, 187);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Sebaran Lokasi Pelabuhan di Pulau Batam</h1>
+      </div>
+    <h1></h1>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map',{
+        center: [1.116979, 104.0201843],
+         zoom: 11.5});
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <ahref="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var marker = L.marker([1.130681449640971, 104.05538599588724]).bindPopup('Pelabuhan Ferry Batam Center').addTo(map);
+        var marker = L.marker([1.1547428787297944, 103.99731411983176]).bindPopup('Pelabuhan Ferry Harbour Bay').addTo(map);
+        var marker = L.marker([1.1653837025642542, 104.00207772205546]).bindPopup('Pelabuhan Batu Ampar').addTo(map);
+        var marker = L.marker([1.1251507592831211, 103.92634763113068]).bindPopup('Pelabuhan Sekupang').addTo(map);
+        var marker = L.marker([1.101580877204305, 103.92855317067031]).bindPopup('Pelabuhan Tanjung Riau').addTo(map);
+        var marker = L.marker([1.0364155306643368, 104.13192279450143]).bindPopup('Pelabuhan Penyebrangan Telaga Punggur').addTo(map);
+        var marker = L.marker([1.1917511365534053, 104.09385427761548]).bindPopup('Pelabuhan Internasional Nongsa Pura').addTo(map);
+        var marker = L.marker([1.080302055263799, 104.13930253123324]).bindPopup('Pelabuhan CPO Kabil').addTo(map);
+    </script>
+</body>
+</html>

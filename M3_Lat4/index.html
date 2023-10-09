@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lat 4 M2</title>
+</head>
+
+<body>
+    <h1>Program Menampilkan Bilangan Prima</h1>
+    <p>Catatan:</p>
+    <i>Bilangan yang ditampilkan merupakan bilangan prima yang dimulai dari 1 sampai dengan angka yang diinput.</i>
+    <br><br>
+
+    <label for="limitInput">Masukkan angka:</label>
+    <input type="number" id="limitInput" placeholder="Limit bilangan prima">
+    <button onclick="prima()">Mulai Hitungan</button>
+    
+    <p id="primeNumbers"></p>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+
+            if (num % 2 === 0 || num % 3 === 0) return false;
+
+            for (let i = 5; i * i <= num; i += 6) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+            }
+
+            return true;
+        }
+
+        function prima() {
+            const limitInput = document.getElementById("limitInput");
+            const primeNumbersElement = document.getElementById("primeNumbers");
+            
+            const limit = parseInt(limitInput.value);
+            if (isNaN(limit) || limit <= 0) {
+                primeNumbersElement.textContent = "Masukkan angka yang valid dan positif.";
+                return;
+            }
+
+            const primeSeries = [];
+            for (let i = 2; i <= limit; i++) {
+                if (isPrime(i)) {
+                    primeSeries.push(i);
+                }
+            }
+
+            primeNumbersElement.textContent = "Bilangan Prima: " + primeSeries.join(", ");
+        }
+    </script>
+</body>
+</html>

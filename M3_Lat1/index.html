@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lat 1 Minggu 2</title>
+</head>
+<body>
+    <h1>Hitungan faktorial dari input</h1>
+    <h2>Masukkan sembarang angka</h2>
+    <form>
+        <input type="number" name="" id="input">
+        <button id="button">click</button>
+        <div id="demo"></div>
+    </form>
+        
+    <script type="text/javascript">
+        var input = document.getElementById("input")
+        var button = document.getElementById("button")
+        var demo = document.getElementById("demo")
+            
+        button.addEventListener("click", function(e){
+            e.preventDefault()
+            var valInp = input.value;
+            var hasil = 1;
+            for(var i=valInp; i>0; i--){
+                hasil *=i;
+                    
+        }
+        demo.innerHTML = `angka faktorial dari <strong> ${valInp} </strong> adalah <strong> ${hasil} </strong>`;
+        })
+    </script>
+</body>
+</html>

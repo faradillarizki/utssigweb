@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lat 3 M2</title>
+</head>
+<body>
+    <h1>Validasi Input Pengguna</h1>
+    
+    <form>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama">
+    <br> <br>
+    <form>
+        <label for="umur">Usia:</label>
+        <input type="number" id="umur" name="umur">
+    <br> <br>
+    </form>
+    <button onclick="ceknama() && cekumur()"> Submit </button> 
+    <br> <br>
+
+    <strong id="demo">Status Anda: </strong>
+
+    <script>
+    function ceknama(){
+        if(document.getElementById("nama").value == "") {
+        alert("Isikan nama Anda!")
+        return true;
+    }
+    }
+
+    function cekumur(){
+        var cekumur=document.getElementById("umur").value;
+        var number;
+
+        if (cekumur<1){
+            text="Anda Game Over.";
+        }
+        else if(cekumur<=5&&cekumur>=1){
+            text="Anda adalah bayi."
+        }
+        else if(cekumur<=15&&cekumur>5){
+            text="Anda adalah anak-anak."
+        }
+        else if(cekumur<=30&&cekumur>15){
+            text="Anda adalah remaja."
+        }
+        else if(cekumur<=60&&cekumur>30){
+            text="Anda sudah dewasa."
+        }
+        else if(cekumur>=61){
+            text="Anda adalah lansia."
+        }
+        document.getElementById("demo").innerHTML=text;
+    }
+    </script>
+
+</body>
+</html>

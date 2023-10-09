@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lat 5 M2</title>
+</head>
+<body>
+    <h1>Program Menampilkan Bilangan Fibonacci</h1>
+    <p>Catatan:</p>
+    <i>Bilangan yang ditampilkan merupakan bilangan fibonacci yang dimulai dari 0 dan 1 dengan jumlah sesuai angka yang diinput.</i>
+    <br><br>
+
+    <label for="limitInput">Masukkan angka:</label>
+    <input type="number" id="txtloop" placeholder="Limit bilangan fibonacci"/>
+    <input type="button" id="btnEnter" value="Mulai Hitungan" onclick="fibonacci(txtloop.value)" />
+
+    <p id="output"></p>
+    <p id="demo"></p>
+
+<script>
+    var fibonacci = function (n) {
+        if (n==1) {
+            var loop = [0, 1];
+            document.getElementById("output").innerHTML = loop;
+            return loop;
+        } 
+        else {
+            var s = fibonacci(n - 1);
+            s.push(s[s.length - 1] + s[s.length - 2]);
+            document.getElementById("output").innerHTML =s;
+            return s;
+        }  
+    };
+</script>
+
+</body>
+</html>
